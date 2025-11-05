@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADHD out of the chat</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- Page Title -->
+    <h1>ADHD out of the chat!</h1>
+
+    <article>
+      <!-- Tab buttons to switch sections -->
+      <div class="buttons-group">
+        <button id="what-is-trigger">What is?</button>
+        <button id="how-use-it-trigger">How use it?</button>
+        <button id="use-it-trigger">Use it!</button>
+      </div>
+     
+      
+
+      <!-- Section: "What is" -->
+      <section id="what-is">
+        <p>
+          Struggling to remember which day <strong>"laundry"</strong> is, or if you actually scheduled that dentist appointment? 👀 <strong>Yeah, same.</strong>
+        </p>
+        <p>
+          <strong>ADHD Out of the Chat!</strong> is the ultimate digital brain dump for when your actual brain is, well, in the chat with like 17 other things.
+        </p>
+        <p>It helps you:</p>
+        <ul>
+          <li>Organize & Schedule your life so you can actually enjoy it.</li>
+          <li>Stop the doom scrolling (at least about your to-do list).</li>
+          <li>Prove to your future self that you did remember to pay that bill.</li>
+        </ul>
+        <p>Basically, we're taking the chaos out of the group chat and putting it into one clean, chill space.</p>
+      </section>
+
+      <!-- Section: "How use it" -->
+      <section id="how-use-it">
+        <p>You <strong>don't need a 5-step tutorial</strong>, promise.</p>
+        <p><strong>Here's the drill:</strong></p>
+        <ul>
+          <li>Add Text: type your task in the input box.</li>
+          <li>Flag It: mark urgent tasks.</li>
+          <li>Delete/Modify: remove or edit tasks easily.</li>
+        </ul>
+        <p><strong>Your brain is for big ideas;</strong> this app is for remembering the small stuff.</p>
+      </section>
+
+      <!-- Section: "Use it" with input and list -->
+      <section id="use-it">
+        <!-- Input group to add or delete items -->
+        <div class="input-group">
+          <input placeholder="Add your list..." id="text-input"/>
+
+          <!-- Add item button -->
+          <button id="add-element-button">
+            <!-- Plus icon SVG -->
+            <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 8.58536C20.1046 8.58536 21 9.48079 21 10.5854V11.4146C21 12.5192 20.1046 13.4146 19 13.4146H15.1582C14.0537 13.4146 13.1582 14.3101 13.1582 15.4146V20C13.1582 21.1046 12.2628 22 11.1582 22H9.84177C8.7372 22 7.84177 21.1046 7.84177 20V15.4146C7.84177 14.3101 6.94634 13.4146 5.84177 13.4146H2C0.895432 13.4146 0 12.5192 0 11.4146V10.5854C0 9.4808 0.89543 8.58536 2 8.58536H5.84177C6.94634 8.58536 7.84177 7.68993 7.84177 6.58536V2C7.84177 0.895432 8.7372 0 9.84177 0H11.1582C12.2628 0 13.1582 0.89543 13.1582 2V6.58536C13.1582 7.68993 14.0537 8.58536 15.1582 8.58536H19Z" fill="#7E05C9"/>
+            </svg>
+          </button>
+
+          <!-- Delete checked items button -->
+          <button id="delete-elements-button">
+            <!-- Trash icon SVG -->
+            <svg width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 27C3.675 27 2.96875 26.7063 2.38125 26.1188C1.79375 25.5313 1.5 24.825 1.5 24V4.5H0V1.5H7.5V0H16.5V1.5H24V4.5H22.5V24C22.5 24.825 22.2063 25.5313 21.6188 26.1188C21.0312 26.7063 20.325 27 19.5 27H4.5ZM19.5 4.5H4.5V24H19.5V4.5ZM7.5 21H10.5V7.5H7.5V21ZM13.5 21H16.5V7.5H13.5V21Z" fill="#7E05C9"/>
+            </svg>
+          </button>
+
+          <!-- Mark items as done button -->
+          <button id="mark-elements-as-done-button">
+            <!-- Checkbox icon SVG -->
+            <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.82353 26C2.04706 26 1.38235 25.7171 0.829412 25.1514C0.276471 24.5856 0 23.9056 0 23.1111V2.88889C0 2.09444 0.276471 1.41435 0.829412 0.848611C1.38235 0.28287 2.04706 0 2.82353 0H22.5882C22.7765 0 22.9529 0.0180556 23.1176 0.0541667C23.2824 0.0902778 23.4471 0.144444 23.6118 0.216667L21 2.88889H2.82353V23.1111H22.5882V13.5056L25.4118 10.6167V23.1111C25.4118 23.9056 25.1353 24.5856 24.5824 25.1514C24.0294 25.7171 23.3647 26 22.5882 26H2.82353ZM12.0353 20.2222L4.05882 12.0611L6.03529 10.0389L12.0353 16.1778L24.9882 2.925L27 4.91111L12.0353 20.2222Z" fill="#7E05C9"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- List of checkbox items -->
+        <ul class="checkbox-list">
+          <li>
+            <input type="checkbox" />
+            Read a book or an e-book from your "to-read" pile.
+          </li>
+          <li>
+            <input type="checkbox" />
+            Learn a new language using an app or online tutorials.
+          </li>
+          <li>
+            <input type="checkbox" />
+            Organize a space in your home (closet, drawer, pantry).
+          </li>
+          <li>
+            <input type="checkbox" />
+            Take an online course or watch educational videos.
+          </li>
+          <li>
+            <input type="checkbox" />
+            Write in a journal or start a personal blog.
+          </li>
+          <li>
+            <input type="checkbox" />
+            Update your resume or plan future goals.
+          </li>
+        </ul>
+      </section>
+    </article>
+  </main>
+  
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
