@@ -1,179 +1,195 @@
-/* === Body and global styles === */
+/* =====================================
+   Global color variables
+   ===================================== */
+:root {
+  --main-color: #7E05C9; /* Main accent color (purple by default) */
+  --main-color-light: color-mix(in srgb, var(--main-color) 20%, white); /* Lighter version for hover or highlight */
+}
+
+/* =====================================
+   General layout and typography
+   ===================================== */
 body {
-  font-family: "Raleway", sans-serif; /* Set main font for the page */
-  background-color: white;            /* Page background color */
-  padding: 0;                          /* Remove default padding */
-  margin: 0;                           /* Remove default margin */
+  font-family: "Raleway", sans-serif; /* Main font family */
+  background-color: white;            /* Page background */
+  padding: 0;                         /* Remove default browser padding */
+  margin: 0;                          /* Remove default browser margin */
 }
 
-/* Main container padding */
+/* Add space around main content */
 main {
-  padding: 4rem; /* Space around content inside <main> */
+  padding: 4rem;
 }
 
-/* Page title styling */
+/* Title styling */
 h1 {
-  color: #7E05C9;      /* Purple text color */
-  font-size: 3.75rem;  /* Large font size for headings */
+  color: var(--main-color);  /* Use main accent color */
+  font-size: 3.75rem;        /* Large title text */
 }
 
-/* Reset all buttons to remove browser default styles */
+/* =====================================
+   Buttons reset
+   ===================================== */
 button {
   all: unset;           /* Remove all default styles */
-  display: inline-block;/* Allow width/height and margin */
-  cursor: pointer;      /* Show pointer cursor on hover */
+  display: inline-block;/* Make buttons behave like block elements */
+  cursor: pointer;      /* Pointer cursor on hover */
 }
 
-/* === Tab button group styling === */
+/* =====================================
+   Tabs (the top buttons that switch sections)
+   ===================================== */
 .buttons-group {
-  display: flex;        /* Arrange buttons in a row */
-  align-items: center;  /* Vertically center the buttons */
-  gap: 2rem;            /* Space between buttons */
+  display: flex;         /* Align buttons in a row */
+  align-items: center;   /* Vertically center buttons */
+  gap: 2rem;             /* Space between buttons */
 
-  /* Styles for each button inside the group */
+  /* Individual button style */
   & button {
-    border-radius: 1.25rem; /* Rounded corners */
-    border: 3px solid #7E05C9; /* Purple border */
-    padding: 1rem 1.75rem;  /* Spacing inside button */
-    font-size: 1.875rem;    /* Font size */
-    background-color: #F3F1F1; /* Light gray background */
+    border-radius: 1.25rem;                /* Rounded corners */
+    border: 3px solid var(--main-color);   /* Border uses main color */
+    padding: 1rem 1.75rem;                 /* Inner spacing */
+    font-size: 1.875rem;                   /* Text size */
+    background-color: #F3F1F1;             /* Light gray background */
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25); /* Soft shadow */
-    transition: box-shadow 0.2s ease, transform 0.2s ease; /* Smooth hover effect */
+    transition: box-shadow 0.2s ease, transform 0.2s ease; /* Smooth hover/press effect */
   }
 
- 
-
-  /* Hover and active button color */
+  /* Hover and active button background */
   & button:hover,
   & button.active {
-    background-color: #F0D9FF; /* Light purple background */
+    background-color: var(--main-color-light);
   }
 
-  /* Active button font weight */
+  /* Highlight active tab text */
   & button.active {
-    font-weight: 600; /* Bold for active tab */
+    font-weight: 600;
   }
 }
 
-/* === Sections content styling === */
+/* =====================================
+   Section styling
+   ===================================== */
 section {
-  position: relative;        /* Needed for pseudo-element positioning */
-  margin-top: 3rem;          /* Space above each section */
-  padding-left: 2rem;        /* Space for left colored line */
-  max-width: 66ch;           /* Maximum line length for readability (~66 characters) */
-  display: none;             /* Hide all sections by default */
+  position: relative;     /* For pseudo-element (the vertical line) */
+  margin-top: 3rem;       /* Space above each section */
+  padding-left: 2rem;     /* Space for the vertical line */
+  max-width: 66ch;        /* Keep line length readable (~66 characters) */
+  display: none;          /* Hidden by default (only active tab shows) */
 }
 
-/* Show the first section by default */
+/* Display the first section on page load */
 section:first-of-type {
   display: block;
 }
 
-/* Left vertical colored line for each section */
+/* Vertical colored line on the left side of each section */
 section:before {
-  content: "";               /* Empty content for the pseudo-element */
-  display: block;
+  content: "";
   position: absolute;
-  left: 0;                   /* Align to the left edge */
-  width: 0.25rem;            /* Line thickness */
-  height: 100%;              /* Full height of section */
-  background-color: #7E05C9; /* Purple line */
-  border-radius: 1rem;       /* Rounded edges */
+  left: 0;
+  width: 0.25rem;                 /* Line thickness */
+  height: 100%;                   /* Full height */
+  background-color: var(--main-color);
+  border-radius: 1rem;            /* Rounded line ends */
 }
 
-/* === Input group (text + button) styling === */
+/* =====================================
+   Input + button group (Add/Delete/Color)
+   ===================================== */
 .input-group {
-  display: flex;             /* Arrange input and button in a row */
-  align-items: center;       /* Vertically center them */
-  gap: 1rem;                 /* Space between input and button */
+  display: flex;             /* Arrange input and buttons horizontally */
+  align-items: center;       /* Vertically align them */
+  gap: 1rem;                 /* Space between input and buttons */
 
-  /* Style the text input */
-  & input {
+  /* Text input field */
+  & input#text-input {
     font-size: 1.875rem;
-    border: 2px solid #7E05C9; /* Purple border */
-    border-radius: 0.625rem;    /* Rounded corners */
-    padding: 0 1rem;            /* Horizontal padding */
-    height: 60px;               /* Fixed height */
+    border: 2px solid var(--main-color);
+    border-radius: 0.625rem;
+    padding: 0 1rem;
+    height: 60px;
   }
 
-
-  /* Style the input button */
+  /* All buttons in the input group (add/delete/color) */
   & button {
-    height: 60px;               /* Match input height */
-    width: 74px;                /* Fixed width */
+    color: var(--main-color); /* The SVGs use currentColor, so this defines their color */
+    height: 60px;
+    width: 74px;
     padding: 0 1rem;
-    border: 2px solid #7E05C9;
+    border: 2px solid var(--main-color);
     border-radius: 0.625rem;
     background-color: white;
-    display: flex;              /* Center content */
+    display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* Hover effect for input button */
+  /* Button hover effect */
   & button:hover {
-    background-color: #F0D9FF;  /* Light purple */
+    background-color: var(--main-color-light);
   }
 }
 
-/* === Checkbox list styling === */
+/* =====================================
+   To-do list styling (checkbox list)
+   ===================================== */
 ul.checkbox-list {
-  all: unset;                  /* Remove browser default styles */
-  list-style-type: none;       /* Remove bullets */
+  all: unset;               /* Remove all browser default styles */
+  list-style-type: none;    /* Remove bullets */
   display: block;
   margin-top: 2rem;
 
-  /* Each list item */
+  /* Individual task item */
   & li {
-    display: flex;             /* Arrange checkbox and label in a row */
-    align-items: center;       /* Vertically align */
-    gap: 0.5rem;               /* Space between checkbox and label */
-    margin-bottom: 0.5rem;    /* Space below each item */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 
-    /* Style the checkbox itself */
+    /* Custom checkbox appearance */
     & input[type="checkbox"] {
-      appearance: none;           /* Remove default checkbox styling */
-      -webkit-appearance: none;   /* For Safari/Chrome */
+      appearance: none;
+      -webkit-appearance: none;
       width: 1.5rem;
       height: 1.5rem;
-      border: 1px solid #7E05C9; /* Purple border */
-      border-radius: 3px;         /* Slightly rounded corners */
-      background-color: white;    /* White background when unchecked */
-      vertical-align: middle;     /* Align with label text */
-      cursor: pointer;            /* Pointer cursor on hover */
-      position: relative;         /* Needed for tick positioning */
+      border: 1px solid var(--main-color);
+      border-radius: 3px;
+      background-color: white;
+      vertical-align: middle;
+      cursor: pointer;
+      position: relative; /* Needed for tick positioning */
     }
 
-    /* Tick mark for checked checkboxes or checkboxes marked as done */
+    /* Tick mark when checked or marked as done */
     & input[type="checkbox"]:checked::after,
     & input[type="checkbox"].done::after {
-      content: "";                        /* Empty pseudo-element for the tick */
+      content: "";
       position: absolute;
-      left: 50%;                          /* Center horizontally */
-      top: 2px;                           /* Slight vertical adjustment */
-      width: 6px;                         /* Tick width */
-      height: 12px;                        /* Tick height */
-      border: solid #7E05C9;              /* Tick color */
-      border-width: 0 2px 2px 0;          /* Only right and bottom borders for tick */
-      transform: translateX(-50%) rotate(45deg); /* Center and rotate tick to form checkmark */
+      left: 50%;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid var(--main-color);
+      border-width: 0 2px 2px 0;
+      transform: translateX(-50%) rotate(45deg); /* Rotate and center tick mark */
     }
 
-    /* Change background color when checkbox is checked */
+    /* Background when checkbox is checked */
     & input[type="checkbox"]:checked {
-      background-color: #F0D9FF;          /* Light purple background to indicate checked */
+      background-color: var(--main-color-light);
     }
 
-    /* Style for checkboxes marked as done (disabled effect) */
+    /* Completed (done) state */
     & input[type="checkbox"].done {
-      cursor: not-allowed;                /* Cursor shows it is not clickable */
-      background-color: #7E05C9;          /* Dark background to indicate completed */
+      cursor: not-allowed;         /* Disabled cursor */
+      background-color: var(--main-color); /* Dark background */
     }
 
-    /* Tick mark color for disabled checkboxes (done state) */
+    /* Tick color for completed (done) state */
     & input[type="checkbox"].done::after {
-      border: solid #F0D9FF;              /* Light-colored tick for contrast */
-      border-width: 0 2px 2px 0;          /* Standard checkmark style: only right and bottom borders */
+      border: solid var(--main-color-light);
+      border-width: 0 2px 2px 0;
     }
   }
 }
-
