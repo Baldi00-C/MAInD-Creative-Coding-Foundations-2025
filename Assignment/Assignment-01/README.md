@@ -1,46 +1,68 @@
 # ADHD Out of the Chat! - Micro App
+## Brief 
+Starting from the concept of a pinboard, implement a web page that:
 
-## Overview
-This is a simple web app designed to help you organize tasks, ideas, and small reminders in a clean and minimal interface.  
-It works like a personal brain dump, taking the chaos out of your mind and putting it into a simple checklist.
+- is responsive (properly layout for smartphone, tablet, and desktop)
+- allows the user to add and remove elements
+- allows the user to coustomize elements (i.e. colors, size)
+- allows the switch between two views (at least)
 
-The app consists of **three main sections**:
+## Screenshoot
+![screen](DOC/How?.png)
+![screen](DOC/Phone.png)
+![screen](DOC/Tablet.png)
+![screen](DOC/Use-it!.png)
+![screen](DOC/What-is?.png)
 
-1. **What is?** – Explains the purpose of the app and how it can help you manage small tasks and ideas.  
-2. **How use it?** – Gives a short guide on how to use the app, with tips on adding, flagging, and deleting tasks.  
-3. **Use it!** – The interactive section where you can:
-   - Add new tasks to your list.
-   - Delete tasks that you completed.
-   - Check/uncheck tasks to track progress.
+# ADHD Out of the Chat!
 
-## Features
-- **Tabbed sections**: Only one section is visible at a time. Clicking a tab button shows the related section.
-- **Interactive task list**:
-  - Add tasks using the input field and “+” button.
-  - Delete checked tasks using the trash button.
-  - Tasks are displayed with checkboxes.
-- **Responsive design**: Works on mobile and desktop with a simple layout.
-- **Custom styles**: Uses Google Fonts (Raleway & Bad Script) and a color-coded interface for clarity.
+**ADHD Out of the Chat!** is a small web app designed to help you manage daily tasks and ideas when your brain is overloaded.  
+You can add, check, delete, and complete tasks — all in one clean, customizable space.  
+Change colors, switch between grid/list views, and keep your mind focused.  
 
-## Technologies Used
-- **HTML** – Structure of the page and content.
-- **CSS** – Styling of buttons, sections, input fields, and checkboxes.
-- **JavaScript** – Tab switching, adding/deleting list items, and checkbox interactions.
-
-## How to Use
-1. Open `index.html` in your browser.
-2. Click on the tabs to switch between sections.
-3. In the “Use it!” section:
-   - Type a task in the input field.
-   - Click the `+` button to add it to the list.
-   - Check the box when the task is done.
-   - Click the trash button to remove all checked tasks.
-
-## Notes
-- Each checkbox can be styled and customized through CSS.
-- The “active” tab button changes style to show which section is visible.
-- This project is beginner-friendly and a good way to practice **HTML, CSS, and JavaScript** basics.
 
 ---
 
-Created as a learning project for beginners to understand DOM manipulation, events, and simple web design.
+## Main Features
+
+- Tab navigation between sections (“What is?”, “How use it?”, “Use it!”)  
+- Add, delete, and mark tasks as done  
+- Change theme color with a color picker  
+- Switch between **Grid** and **List** view  
+- Auto-deselect checkboxes when clicking outside the list  
+
+---
+
+## JavaScript Functions Overview
+
+| Function / Event | Description |
+|------------------|-------------|
+| `DOMContentLoaded` | Initializes the app once the page is fully loaded. |
+| `Tab Buttons Click` | Switches between content sections and updates the active tab. |
+| `Add Item` | Adds a new to-do item using the text input field. |
+| `Delete Checked` | Removes all checked items from the list. |
+| `Mark as Done` | Moves checked tasks to the bottom, disables them, and marks them as done. |
+| `Color Picker` | Lets you pick a custom main color that updates the app theme. |
+| `Grid/List View Buttons` | Switch between grid and list layout. |
+| `Outside Click Deselect` | Deselects all active checkboxes when clicking outside the list. |
+
+---
+
+## Technologies Used
+
+- **HTML5** – Page structure  
+- **CSS3** – Layout, colors, responsive design  
+- **Vanilla JavaScript (ES6)** – Logic and interactivity  
+
+---
+
+## Customization
+- Change the main color dynamically with the color picker (`--main-color`).  
+- Toggle between **Grid View** and **List View** for your tasks.
+
+---
+
+## How to Run
+Simply open `index.html` in any modern browser — no installation required.
+
+---
