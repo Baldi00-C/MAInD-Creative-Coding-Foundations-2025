@@ -1,5 +1,13 @@
 # ADHD Out of the Chat! - Micro App
 
+## Brief
+Starting from the concept of a pinboard, implement a web page that:
+
+- is responsive (properly layout for smartphone, tablet, and desktop)
+- allows the user to add and remove elements
+- allows the user to coustomize elements (i.e. colors, size)
+- allows the switch between two views (at least)
+
 ## Overview
 This is a simple web app designed to help you organize tasks, ideas, and small reminders in a clean and minimal interface.  
 It works like a personal brain dump, taking the chaos out of your mind and putting it into a simple checklist.
