@@ -3,41 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Tile Puzzle</title>
+    <title>AGG_PuzzleGame</title>
     <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Image Puzzle Challenge</h1>
+    <header id="minimal-header">
+        <h1 class="header-title">Non è un proverbio. È la vita Giacomo!
+        </h1>
     </header>
 
-    <div id="controls">
-        <h2>Select Difficulty:</h2>
-        <button onclick="startGame('facile.jpg', 3)">Easy (3x3)</button>
-        <button onclick="startGame('medio.jpg', 4)">Medium (4x4)</button>
-        <button onclick="startGame('difficile.jpg', 5)">Hard (5x5)</button>
-        
-        
+    <div id="settings-container">
+
+        <div id="character-selection">
+            <h2> Choose Your Hero:</h2>
+            <div class="character-options">
+                <div class="character-item">
+                    <button onclick="selectCharacter('Aldo')" data-char="Aldo" class="char-select-btn">Aldo</button>
+      
+                    <img src="assets/Aldo.jpg" alt="Aldo Avatar" class="char-thumbnail">
+                </div>
+                <div class="character-item">
+                    <button onclick="selectCharacter('Giovanni')" data-char="Giovanni" class="char-select-btn">Giovanni</button>
+
+                    <img src="assets/Giovanni.jpg" alt="Giovanni Avatar" class="char-thumbnail">
+                </div>
+                <div class="character-item">
+                    <button onclick="selectCharacter('Giacomo')" data-char="Giacomo" class="char-select-btn">Giacomo</button>
+   
+                    <img src="assets/Giacomo.jpg" alt="Giacomo Avatar" class="char-thumbnail">
+                </div>
+            </div>
+        </div>
+
+        <div id="controls">
+            <h2> Select Difficulty & Image:</h2>
+            <div class="control-options">
+                <button onclick="startGame('facile.webp', 3)" class="control-btn" data-size="3">Easy (3x3)</button>
+                <button onclick="startGame('medio.jpeg', 4)" class="control-btn" data-size="4">Medium (4x4)</button>
+                <button onclick="startGame('difficile.jpg', 5)" class="control-btn" data-size="5">Hard (5x5)</button>
+            </div>
+        </div>
+
+
+        <div id="keyboard-controls">
+            <h2> Keyboard Controls:</h2>
+            <ul>
+                <li><strong>Move Selection:</strong> Arrows (↑↓←→) / WASD</li>
+                <li><strong>Select/Deselect:</strong> <span class="key-label">SPACE</span> / <span class="key-label">ENTER</span></li>
+                <li><strong>Swap Tiles:</strong> <span class="key-label">C</span></li>
+            </ul>
+        </div>
     </div>
     
     <main id="game-main">
         <div id="game-area">
             <div id="puzzle-container">
-                </div>
+
+            </div>
             
-            <div id="reference-box">
+            <div id="info-panel">
+                <div id="score-display">
+                    <h3>Player: <span id="display-character">Aldo</span></h3>
+                    <p>Total Moves: <span id="move-count">0</span></p>
+                </div>
+
                 <h3>Reference Image</h3>
                 <img id="reference-image" src="" alt="Full Reference Image">
-                <button id="restart-btn" onclick="restartGame()">Restart</button>
+                <button id="restart-btn" onclick="restartGame()">Restart Game</button>
             </div>
         </div>
         <div id="message" class="hidden"></div>
     </main>
 
+    <audio id="win-sound" src="assets/win_sound.mp3" preload="auto"></audio> 
     <script src="script.js"></script>
 </body>
 </html>
