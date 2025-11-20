@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tile Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Image Puzzle Challenge</h1>
+    </header>
+
+    <div id="controls">
+        <h2>Select Difficulty:</h2>
+        <button onclick="startGame('facile.jpg', 3)">Easy (3x3)</button>
+        <button onclick="startGame('medio.jpg', 4)">Medium (4x4)</button>
+        <button onclick="startGame('difficile.jpg', 5)">Hard (5x5)</button>
+        
+        
+    </div>
+    
+    <main id="game-main">
+        <div id="game-area">
+            <div id="puzzle-container">
+                </div>
+            
+            <div id="reference-box">
+                <h3>Reference Image</h3>
+                <img id="reference-image" src="" alt="Full Reference Image">
+                <button id="restart-btn" onclick="restartGame()">Restart</button>
+            </div>
+        </div>
+        <div id="message" class="hidden"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

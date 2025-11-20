@@ -1,0 +1,29 @@
+
+:root {
+  --main-color: #7E05C9; 
+  --main-color-light: color-mix(in srgb, var(--main-color) 20%, white);
+
+}
+
+body {
+  font-family: "Raleway", sans-serif; 
+  background-color: white;           
+  padding: 0;                        
+  margin: 0;       
+                   
+}
+
+/* Add space around main content */
+main {
+  padding: 1rem;
+}
+
+/* Title styling */
+h1 {
+  color: var(--main-color); 
+  font-size: 3.75rem; 
+  background-color: var(--main-color-light);      
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  text-align: center;
+}
