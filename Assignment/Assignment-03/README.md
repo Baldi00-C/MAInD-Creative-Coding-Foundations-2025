@@ -1,10 +1,28 @@
 # AGG Puzzle Game — Unsplash Edition
 
 ## Brief
-[INCOLLA QUI IL TESTO DEL BRIEF DELL'ESERCIZIO FORNITO DAL DOCENTE]
+Upgrade the **Assignment 02** by adding the use of data coming from an external web API. For example, fetch contents (audio, images, video, text, metadata) from online archives, AI generated contents (chatGPT API), data (weather, realtime traffic data, environmental data).
 
-## Short Project Description
+Have a look at the lesson about the API:
+
+[https://wind-submarine-3d4.notion.site/Lesson-5-200d516637bc811aba69e13b0ffe438f?pvs=74](https://www.notion.so/200d516637bc811aba69e13b0ffe438f?pvs=21)
+
+The application **must** have those requirements:
+
+- The webpage is responsive
+- Use a web API (you choose which one best fists for your project) to load the data and display them in the webpage
+- At least one multimedia file (for user feedback interactions, or content itself)
+- Develop a navigation system that allows the user to navigate different sections with related content and functionalities
+
+## Project Description
 A responsive web puzzle game featuring Aldo, Giovanni, and Giacomo. Users select a character and difficulty (3x3 to 5x5), moving tiles to solve the image. It integrates the Unsplash API for dynamic imagery, keyboard/mouse controls, and multimedia feedback (random GIFs/Audio) upon victory.
+
+* **UI Project:**
+![screen](DOC/API.png)
+![screen](DOC/HOME.png)
+![screen](DOC/WIN.png)
+
+
 
 ## Content and Data Sources
 * **Images:** Fetched dynamically via [Unsplash API](https://unsplash.com/developers).
@@ -29,7 +47,7 @@ The application uses the **Unsplash API** to fetch random images or search resul
 1.  Open `index.html` in a modern web browser.
 2.  **Note:** To make the API work, insert a valid Unsplash Access Key in `script.js` at line 8: `const UNSPLASH_ACCESS_KEY = "YOUR_KEY";`.
 
-### 📋 List of Functions
+### List of Functions
 
 | Function Name | Arguments | Description | Returns |
 | :--- | :--- | :--- | :--- |
@@ -49,3 +67,7 @@ The application uses the **Unsplash API** to fetch random images or search resul
 | `loadGallery` | *none* | Triggered by button click. Reads input, calls API, and renders clickable thumbnails. | `Promise<void>` |
 | `moveHighlight` | `direction` (String) | Updates the visually highlighted tile index based on keyboard arrow inputs. | `void` |
 | `handleKeyPress` | `event` (KeyboardEvent) | Global listener for keyboard controls (Arrows, WASD, Enter, Space, C). | `void` |
+
+
+### Diagram flow
+![screen](DOC/Diagram.svg)
