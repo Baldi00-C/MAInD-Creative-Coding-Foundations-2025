@@ -1,6 +1,6 @@
 
 
-const UNSPLASH_ACCESS_KEY = "7GkTBzcQCb_QPY_VenseFX7fOdNybKnoKNJK_BcZCoM";
+const UNSPLASH_ACCESS_KEY = "HERE-YOUR-KEY-ACCESS"; 
 
 
 // Gif
