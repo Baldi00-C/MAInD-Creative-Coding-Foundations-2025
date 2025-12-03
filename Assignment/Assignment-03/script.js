@@ -141,7 +141,7 @@ function checkWin() {
         const randomSound = victorySounds[Math.floor(Math.random() * victorySounds.length)];
 
         //  Aggiorna DOM
-        if (victoryText) victoryText.innerHTML = `Grande ${currentCharacter}!<br>Mosse totali: ${moveCount}`;
+        if (victoryText) victoryText.innerHTML = `Great job ${currentCharacter}!<br>Total moves: ${moveCount}`;
         
         if (victoryImgPlaceholder) {
             victoryImgPlaceholder.src = randomGif;
