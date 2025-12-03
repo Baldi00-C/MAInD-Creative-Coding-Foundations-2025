@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AGG_PuzzleGame — Unsplash Edition</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.9.15/build/Tone.min.js"></script>
+</head>
+<body>
+    <header id="minimal-header">
+        <h1 class="header-title">Non è un proverbio. È la vita Giacomo!</h1>
+        <nav id="main-nav">
+            <button class="nav-btn active" data-target="play-section">Play</button>
+            <button class="nav-btn" data-target="gallery-section">Gallery</button>
+        </nav>
+    </header>
+
+    <div id="settings-container">
+        <div id="character-selection">
+            <h2>Choose Your Hero:</h2>
+            <div class="character-options">
+                <div class="character-item">
+                    <button onclick="selectCharacter('Aldo')" data-char="Aldo" class="char-select-btn">Aldo</button>
+                    <img src="Assets/Aldo.jpg" onerror="this.src='https://placehold.co/60x60/3f51b5/ffffff?text=A'" alt="Aldo" class="char-thumbnail">
+                </div>
+                <div class="character-item">
+                    <button onclick="selectCharacter('Giovanni')" data-char="Giovanni" class="char-select-btn">Giovanni</button>
+                    <img src="Assets/Giovanni.jpg" onerror="this.src='https://placehold.co/60x60/ff9800/212121?text=G'" alt="Giovanni" class="char-thumbnail">
+                </div>
+                <div class="character-item">
+                    <button onclick="selectCharacter('Giacomo')" data-char="Giacomo" class="char-select-btn">Giacomo</button>
+                    <img src="Assets/Giacomo.jpg" onerror="this.src='https://placehold.co/60x60/e91e63/ffffff?text=C'" alt="Giacomo" class="char-thumbnail">
+                </div>
+            </div>
+        </div>
+
+        <div id="controls">
+            <h2>Difficulty & Source:</h2>
+            <div class="control-options">
+                <button onclick="startGame(null, 3)" class="control-btn" data-size="3">Easy (3x3)</button>
+                <button onclick="startGame(null, 4)" class="control-btn" data-size="4">Medium (4x4)</button>
+                <button onclick="startGame(null, 5)" class="control-btn" data-size="5">Hard (5x5)</button>
+            </div>
+
+            <div style="margin-top:12px; display:flex; justify-content:center; align-items:center;">
+                <input id="unsplash-query" placeholder="e.g. minimal" value="minimal" />
+                <button id="new-unsplash" class="control-btn" style="flex-grow:0;">Fetch New Image</button>
+            </div>
+        </div>
+
+        <div id="keyboard-controls">
+            <h2>Controls:</h2>
+            <ul>
+                <li><strong>Move:</strong> Arrows / WASD</li>
+                <li><strong>Select:</strong> SPACE / ENTER</li>
+                <li><strong>Swap:</strong> C</li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="game-main">
+        <section id="play-section" class="tab-section active">
+            <div id="game-area">
+                <div id="puzzle-container"></div>
+
+                <div id="info-panel">
+                    <div id="score-display">
+                        <h3>Player: <span id="display-character">Aldo</span></h3>
+                        <p>Moves: <span id="move-count">0</span></p>
+                    </div>
+                    <h3>Reference</h3>
+                    <img id="reference-image" src="https://placehold.co/150x150/e0e0e0/555555?text=Ref" alt="Reference">
+                    <button id="restart-btn" onclick="restartGame()">Restart</button>
+                </div>
+            </div>
+
+            <div id="message" class="hidden">
+                <div class="message-content">
+                    <h2>PUZZLE SOLVED!</h2>
+                    <p id="victory-text">Great Job!</p>
+                    
+                    <p class="volume-hint">🔊 Alza il volume!</p>
+                    
+                    <img id="victory-img-placeholder" class="victory-gif" src="" alt="">
+                    <br>
+                    <button class="replay-btn" onclick="startGame(null, currentSize)">Gioca Ancora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery-section" class="tab-section">
+            <h2>Unsplash Gallery</h2>
+            <div class="gallery-controls">
+                <input id="gallery-query" placeholder="Search..." value="architecture" />
+                <button id="load-gallery">Load Gallery</button>
+            </div>
+            <div id="gallery-grid" class="grid"></div>
+        </section>
+    </main>
+
+    <audio id="win-sound" style="display:none;"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
